@@ -6,3 +6,4 @@ try {
     echo "Erro na conexão com banco de dados.";
 }
 ?>
+
