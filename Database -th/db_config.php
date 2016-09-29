@@ -11,8 +11,9 @@
              INSERT INTO aluno (nome, matricula, email) VALUES  ('Matheus',  'x/xxxxxx', 'ma@gmail.com');
              INSERT INTO aluno (nome, matricula, email) VALUES  ('Gabriel',  'x/xxxxxx', 'ga@gmail.com');
              ";
+        $sql2 =  "DELETE FROM aluno WHERE id = 1";
 
-         $db->exec($sql);
+         $db->exec($sql2);
          print("Created initial 'aluno' and populated it\n");
 
     } catch(PDOException $e) {

@@ -23,11 +23,11 @@
                    <th>Matrícula</th>
                    <th>E-mail</th>
                </tr>";
-     $resultado = $db->query($sql); // PEGA A CONEXAO DO DB DEFINIDA NO REQUIRE
+    $resultado = $db->query($sql); // PEGA A CONEXAO DO DB DEFINIDA NO REQUIRE
        while($row = $resultado->fetch(PDO::FETCH_ASSOC))
        {
            echo "<tr scope=\"row\">";
-           echo "<td>" . $row['id'] . "</td>";
+           echo "<td>" . $row['id'] . "</tdE>";
            echo "<td>" . $row['nome'] . "</td>";
            echo "<td>" . $row['matricula'] . "</td>";
            echo "<td>" . $row['email'] . "</td>";
