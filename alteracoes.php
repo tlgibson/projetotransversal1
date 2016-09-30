@@ -1,7 +1,7 @@
 <?php
     public function inserir_processo($nome, $matricula, $email)
     {
-        $stmt = $this->conn->prepare('INSERT INTO aluno (nome, matricula, email) VALUES (:nome, :matricula, :email)');
+        $stmt = $PDO->db->prepare('INSERT INTO aluno (nome, matricula, email) VALUES (:nome, :matricula, :email)');
         // Higienizado automaticamente pela PDO
         $stmt->bindValue(':nome', $nome);
         $stmt->bindValue(':matricula', $matricula);

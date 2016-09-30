@@ -13,7 +13,7 @@
              ";
         $sql2 =  "DELETE FROM aluno WHERE id = 1";
 
-         $db->exec($sql2);
+         $db->exec($sql);
          print("Created initial 'aluno' and populated it\n");
 
     } catch(PDOException $e) {
