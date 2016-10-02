@@ -20,7 +20,7 @@
           echo "USUARIO DELETADO COM SUCESSO!!";
 }
     elseif(isset($_POST['Ed'])){
-          $qr = $sql->query ("UPDATE  tabela_1 SET nome='$nome',email='$email' WHERE matricula='$matr'");
+          $qr = $sql->query ("UPDATE  tabela_1 SET nome='$nome'AND email='$email' WHERE matricula='$matr'");
           echo "OS DADOS USUARIO DE MATRICULA $matr FORAM ALTERADOS PARA NOME:$nome e EMAIL:$email";
 }
  ?>
