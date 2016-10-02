@@ -1,8 +1,9 @@
-<meta http-equiv="Content-Type" content="text/html, charset=utf-8">
 <?php
 //Verifica se há conexão com o MySQL
-$con = @mysql_connect("localhost", "root", "") or die("Não foi possível conectar com o servidor de dados!");
-
-//Verifica se o banco de dados existe
-mysql_select_db("mapeamento", $con) or die("Banco de dados não localizado!");
+try {
+    //$db = mysqli_connect("localhost", "root", "", "testes");
+    $db = new PDO("mysql:dbname=testes;host=localhost", "root", "");
+} catch(PDOException $ex) {
+    echo "Erro na conexão com banco de dados.";
+}
 ?>
