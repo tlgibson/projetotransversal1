@@ -18,7 +18,8 @@ public function __construct(){
 
     	
 	}catch(PDOException $e){
-    		echo "Connection failed: " . $e->getMessage();
+		throw new PDOException($e);    		
+		echo "Connection failed: " . $e->getMessage();
     	}
 
 }
