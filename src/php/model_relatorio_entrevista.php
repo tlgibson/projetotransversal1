@@ -4,7 +4,7 @@ class model_relatorio_entrevista{
 
 	private $conn;	
 	
-public function model_relatorio_entrevista(){
+public function __construct(){
 	$cb = new conecta_bd();
 	$this->conn = $cb->get_connection();
 }
