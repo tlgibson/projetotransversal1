@@ -9,7 +9,7 @@ CREATE DATABASE uiba_db;
 
 /*--------------------- Criando tabela usuário ---------------------*/
 
-CREATE TABLE usuario
+CREATE TABLE usuarios
 (
 `id` INT NOT NULL auto_increment,
 `nome` VARCHAR(150) NOT NULL,
