@@ -2,14 +2,14 @@ jQuery(document).ready(function(){
 
 		jQuery('#form_cad_processos').submit(function(){
 			var dados = "processo="+document.getElementById("nome_processo").value			
-			alert(dados);
+			
 			jQuery.ajax({
 				type: "POST",
 				url: "../php/cadastra_processo.php",
 				data: dados,
 				success: function( data )
 				{
-					alert( data );
+					alert( "Processo cadastrado com sucesso!!");
 				}
 			});
 			
@@ -17,5 +17,31 @@ jQuery(document).ready(function(){
 		});
 
 
+		
+
+
 
 });
+
+
+
+
+jQuery(document).ready(function(){
+
+	jQuery('#cadastrar_usuario').submit(function(){
+		var dados = jQuery(this).serialize();			
+		
+		jQuery.ajax({
+			type: "POST",
+			url: "../php/control_cadastro_usuario.php",
+			data: dados,
+			success: function( data )
+			{	
+				alert("Usuário cadastrado com sucesso");
+			}
+		});
+			
+			return false;
+		});
+});
+
