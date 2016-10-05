@@ -18,6 +18,11 @@ public function __construct($user){
 	$this->conn = $cb->get_connection();
 }
 
+public function __construct(){
+	
+	$cb = new conecta_bd(); 
+	$this->conn = $cb->get_connection();
+}
 
 
 public function cadastra_usuario($user){
@@ -89,8 +94,8 @@ public function seleciona_usuario($id){
 
 public function lista_usuarios(){
 	$sql = 'SELECT * FROM usuarios'; 
+	
 	$stmt = $this->conn->prepare($sql);
-	$stmt->bindValue(':id',$id);
 	$stmt->execute();
 
 }
