@@ -28,7 +28,7 @@ git push
 Para adicionar apenas uma pasta específica ou código solto, utilizam-se os mesmo comandos,
 mas especifica-se o arquivo/pasta que deseja adicionar.
 ```
-git add "Pasta do Rafael"
+git add Pasta do Rafael
 git commit -m "Meus códigos php"
 git push
 ```
