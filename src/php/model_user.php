@@ -9,14 +9,8 @@ class model_user{
 
 
 	private $conn;
-	private $user;	
 	
-public function __construct($user){
 	
-	$cb = new conecta_bd(); 
-	$this->user = $user;
-	$this->conn = $cb->get_connection();
-}
 
 public function __construct(){
 	
@@ -31,15 +25,15 @@ public function cadastra_usuario($user){
 	        VALUES (:nome,:email,:matricula,:cpf,:data_nasc,:telefone,:nome_mae,:tipo_user,:senha)';
 	$stmt = $this->conn->prepare($sql);
 	
-	$stmt->bindValue(':nome', this->user->getNome());
-	$stmt->bindValue(':email', this->user->getEmail());
-	$stmt->bindValue(':matricula', this->user->getMatricula());
-	$stmt->bindValue(':cpf', this->user->getCpf()); 
-	$stmt->bindValue(':data_nasc', this->user->getData_nascimento());
-	$stmt->bindValue(':telefone', this->user->getTelefone());
-	$stmt->bindValue(':nome_mae', this->user->getNome_mae());
-	$stmt->bindValue(':tipo_user', this->user->getTipo_user());
-	$stmt->bindValue(':senha', this->user->getSenha());
+	$stmt->bindValue(':nome',$user->getNome());
+	$stmt->bindValue(':email', $user->getEmail());
+	$stmt->bindValue(':matricula', $user->getMatricula());
+	$stmt->bindValue(':cpf', $user->getCpf()); 
+	$stmt->bindValue(':data_nasc', $user->getData_nascimento());
+	$stmt->bindValue(':telefone', $user->getTelefone());
+	$stmt->bindValue(':nome_mae', $user->getNome_mae());
+	$stmt->bindValue(':tipo_user', $user->getTipo_user());
+	$stmt->bindValue(':senha', $user->getSenha());
 
 	$stmt->execute();
 
@@ -62,16 +56,16 @@ public function atualiza_usuario($user){
 
 	$stmt = $this->conn->prepare($sql);
 
-	$stmt->bindValue(':nome', this->user->getNome());
-	$stmt->bindValue(':email', this->user->getEmail());
-	$stmt->bindValue(':matricula', this->user->getMatricula());
-	$stmt->bindValue(':cpf', this->user->getCpf()); 
-	$stmt->bindValue(':data_nasc', this->user->getData_nascimento());
-	$stmt->bindValue(':telefone', this->user->getTelefone());
-	$stmt->bindValue(':nome_mae', this->user->getNome_mae());
-	$stmt->bindValue(':tipo_user', this->user->getTipo_user());
-	$stmt->bindValue(':senha', this->user->getSenha());
-	$stmt->bindValue(':id', this->user->getId());
+	$stmt->bindValue(':nome', $user->getNome());
+	$stmt->bindValue(':email', $user->getEmail());
+	$stmt->bindValue(':matricula', $user->getMatricula());
+	$stmt->bindValue(':cpf', $user->getCpf()); 
+	$stmt->bindValue(':data_nasc', $user->getData_nascimento());
+	$stmt->bindValue(':telefone', $user->getTelefone());
+	$stmt->bindValue(':nome_mae', $user->getNome_mae());
+	$stmt->bindValue(':tipo_user', $user->getTipo_user());
+	$stmt->bindValue(':senha', $user->getSenha());
+	$stmt->bindValue(':id', $user->getId());
 
 
 	$stmt->execute();
@@ -94,7 +88,7 @@ public function seleciona_usuario($id){
 
 public function lista_usuarios(){
 	$sql = 'SELECT * FROM usuarios'; 
-	
+
 	$stmt = $this->conn->prepare($sql);
 	$stmt->execute();
 
