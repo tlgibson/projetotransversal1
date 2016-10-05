@@ -15,15 +15,17 @@
 $emailErr = $senhaErr = $validaErr = "";
 $email = $senha = "";
 
+//Verifica se o usuário clicou no botão Submit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	
+	//Verifica se todos os campos estão preenchidos
 	if (!empty($_POST) AND !empty($_POST['email']) AND !empty($_POST['senha'])) {
 			//Cria a classe Validator definida acima
 			$vldt = new Validator();
 			
-			//Coloca os POTS do form_login em variaveis
-			$email = $_POST['email'];
-			$senha = $_POST['senha'];
+			//Coloca os POTS do form_login em variaveis e as formata
+			$email = test_input($_POST['email']);
+			$senha = test_input($_POST['senha']);
+			//Chama a função para validar o login
 			if($vldt->valida_login($email,$senha) == true){
 				header("Location: http://localhost/projetos3/projetotransversal1/login_success.php");exit;
 			}
@@ -32,20 +34,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			}
 	}
 	
+//Verifica se o usuário digitou o email
   if (empty($_POST["email"])) {
     $emailErr = "Por favor dgite o email";
   } else {
     $email = test_input($_POST["email"]);
   }
-  
+  //Verifica se o usuário digitou a senha
   if (empty($_POST["senha"])) {
-    $senhaErr = "Digite a senha";
+    $senhaErr = "Por favor digite a senha";
   } else {
     $senha = test_input($_POST["senha"]);
   }
     
 }
 
+//Formata os dados para entidades html
 function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
@@ -53,7 +57,7 @@ function test_input($data) {
   return $data;
 }
 ?>
-
+<!------------Formulário de login-------------->
 <h2>Log In</h2>
 <span class="error"> <?php echo $validaErr;?></span>
 <p><span class="error">* campo obrigatório.</span></p>
