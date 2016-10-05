@@ -9,7 +9,7 @@ CREATE DATABASE uiba_db;
 
 /*--------------------- Criando tabela usuário ---------------------*/
 
-CREATE TABLE usuario
+CREATE TABLE usuarios
 (
 `id` INT NOT NULL auto_increment,
 `nome` VARCHAR(150) NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE usuario
 `cpf` VARCHAR(14) NOT NULL,
 `data_nascimento` DATE  NOT NULL,
 `telefone` VARCHAR(14) NOT NULL,
-`nome_mãe` VARCHAR(150) NOT NULL,
+`nome_mae` VARCHAR(150) NOT NULL,
 `tipo_user` INT NOT NULL,
 `senha` VARCHAR(50) NOT NULL,
  PRIMARY KEY (`id`),
