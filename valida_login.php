@@ -43,37 +43,3 @@ class Validator{
 }
  ?>
  
- <html>
-	<body>
-		<?php
-			//Cria a classe Validator definida acima
-			$vldt = new Validator();
-			
-			//Coloca os POTS do form_login em variaveis
-			$email = $_POST['email'];
-			$senha = $_POST['senha'];
-			
-			
-			//Verifica se o usuário digitou algo no login e direciona para a pagina do login case tenha deixado em branco
-			if (!empty($_POST) AND (empty($_POST['email']) OR empty($_POST['senha']))) {
-				header("Location: http://localhost/projetos3/projetotransversal1/form_login.php");exit;
-			}
-			
-			//verifica se existe o usuario no BD, e caso true, o direciona para a pagina de sessao dele
-			if($vldt->valida_login($email,$senha) == true){
-				header("Location: http://localhost/projetos3/projetotransversal1/login_success.php");exit;
-			}
-			
-			//se nao existir o usuario, direciona para o cadastro de usuario ----não implementar ainda---
-			/*elseif($vldt->valida_login($email,$senha) == false){
-				header("Location: http://localhost/projetos3/projetotransversal1/form_user.php");exit;
-			}*/
-			
-			//se nao existir o usuario, manda uma mensagem
-			elseif($vldt->valida_login($email,$senha) == false){
-				echo "Não o encontramos no banco de dados..."."\n";
-				echo "Tem certeza que digitou as informações corretas?";
-			}
-		?>
-	</body>
- </html>
