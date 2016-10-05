@@ -25,4 +25,11 @@ git add .
 git commit -m "Criação da pasta teste"
 git push
 ```
+Para adicionar apenas uma pasta específica ou código solto, utilizam-se os mesmo comandos,
+mas especifica-se o arquivo/pasta que deseja adicionar.
+```
+git add "Pasta do Rafael"
+git commit -m "Meus códigos php"
+git push
+```
 O username e password pedidos são referentes a conta de vocês do github mesmo.
