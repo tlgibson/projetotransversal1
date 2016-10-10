@@ -95,6 +95,17 @@ public function lista_usuarios(){
 }
 
 
+public function valida_login($email){
+	$comando = 'SELECT * FROM usuarios WHERE email = :email';
+    $stmt = $this->conn->prepare($comando);
+    $stmt->bindValue(':email', $email); //<-- Higienizado automaticamente pela PDO
+	$stmt->execute();
+	 
+	 //Transforma a query em um array para trabalhar com php
+	$result = $stmt->fetchAll();
+
+	return $result;
+}
 }//Fim classe
 
 
