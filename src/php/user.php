@@ -11,11 +11,18 @@ class user{
 	private $nome_mae; 
 	private $tipo_user; 
 	private $senha;
-	private $id
+	private $id;
 
-function __construct(){
-
-
+function __construct($nome, $email, $matricula, $cpf, $data_nascimento, $telefone, $nome_mae, $tipo_user, $senha){
+	$this->nome = $nome;
+	$this->email = $email;
+	$this->matricula = $matricula;
+	$this->cpf = $cpf;
+	$this->data_nascimento = $data_nascimento;
+	$this->telefone = $data_nascimento;
+	$this->nome_mae = $nome_mae;
+	$this->tipo_user = $tipo_user;
+	$this->senha = $senha;
 }
 
 public function getId(){
